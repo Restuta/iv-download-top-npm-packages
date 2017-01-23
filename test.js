@@ -9,7 +9,7 @@ const download = require('./')
 test('download', function (t) {
   t.plan(3)
 
-  const COUNT = process.env.COUNT || 10
+  const COUNT = parseInt(process.env.COUNT, 10) || 10
 
   series([
     (callback) => download(COUNT, callback),
