@@ -25,8 +25,8 @@ test('download', function(t) {
       }
 
       // Filter .gitignore and other hidden files
-      files = files.filter((file) => !/^\./.test(file))
-      t.equal(files.length, COUNT, `has ${COUNT} files`)
+      const filteredFiles = files.filter((file) => !/^\./.test(file))
+      t.equal(filteredFiles.length, COUNT, `has ${COUNT} files`)
       callback()
     })
   }
