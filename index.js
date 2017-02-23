@@ -6,13 +6,11 @@ require('babel-register')({
   babelrc: false,
   "presets": [
     ["env", {
-      "targets": {
-        "node": ["4"]
-      }
+      "targets": { "node": ["4"] }
     }],
     // "stage-2"
   ],
   "plugins": ["add-module-exports"],
 })
 require('babel-polyfill')
-require('./lib/index');
+module.exports = require('./lib/index');
