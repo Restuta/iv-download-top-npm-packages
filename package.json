@@ -5,12 +5,12 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "cross-env NODE_PATH=./lib node index.js",
-    "dev": "cross-env NODE_PATH=./lib nodemon index.js --ext js --ignore data/",
+    "start": "cross-env NODE_PATH=./lib COUNT=10 node index.js",
+    "dev": "cross-env NODE_PATH=./lib nodemon index.js --ext js --ignore packages/",
     "eslint": "eslint lib/ --ext .js || true",
     "eslint:fix": "eslint lib/ --ext .js --fix || true",
     "reinstall": "rimraf node_modules && npm i",
-    "test": "node test.js"
+    "test": "cross-env NODE_PATH=./lib node test.js | tap-spec"
   },
   "author": "Anton Vynogradenko <restuta8@gmail.com> (http://restuta.me)",
   "license": "MIT",
@@ -30,10 +30,13 @@
     "nodemon": "^1.10.2",
     "rimraf": "^2.5.2",
     "run-series": "^1.1.4",
+    "tap-spec": "^4.1.1",
     "tape": "~4.6.0"
   },
   "dependencies": {
+    "bluebird": "^3.4.7",
     "cheerio": "^0.22.0",
+    "download-npm-package": "^3.1.10",
     "little-scraper": "^1.0.0",
     "lodash": "^4.17.4"
   }
