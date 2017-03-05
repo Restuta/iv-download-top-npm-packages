@@ -41,5 +41,3 @@ const duplicates = _.filter(
 )
 console.info(duplicates)
 ```
-
-I understand it's not a production ready task, but it is worth pointing those issues out.
